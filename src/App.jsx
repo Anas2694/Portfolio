@@ -4,6 +4,9 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 const PROFILE_IMG = "/assets/profile_pic.jpeg";
 const RESUME_URL = "/assets/MohdViquaruddinAnas_Resume.pdf";
 const PAPER_URL = "/assets/Trust_Aware_Q_Learning_IoT_Routing.pdf";
+const EXITLENS_VIDEO = "/assets/exitlens-demo.mp4";
+const POSTVISIT_VIDEO = "/assets/postvisit-demo.mp4";
+const URBANSTAY_VIDEO = "/assets/urbanstay-demo.mp4";
 
 const NAV_LINKS = [
   { label: "About", id: "about" },
@@ -31,6 +34,7 @@ const PROJECTS = [
     ],
     live: "https://exitlens-app.onrender.com",
     github: "https://github.com/Anas2694/ExitLens",
+    video: EXITLENS_VIDEO,
     demo: { email: "mohdviquaruddin.is23@bmsce.ac.in", password: "Anas_2004" },
     color: "#6366f1",
     featured: true,
@@ -50,6 +54,7 @@ const PROJECTS = [
     ],
     live: "https://postvisit-healthcare.onrender.com",
     github: "https://github.com/Anas2694/PostVisit-healthcare",
+    video: POSTVISIT_VIDEO,
     demo: { email: "mohdviquaruddin.is23@bmsce.ac.in", password: "Anas_2004" },
     color: "#14b8a6",
     featured: false,
@@ -69,6 +74,7 @@ const PROJECTS = [
     ],
     live: "https://urbanstay-81ly.onrender.com",
     github: "https://github.com/Anas2694",
+    video: URBANSTAY_VIDEO,
     demo: null,
     color: "#f59e0b",
     featured: false,
@@ -165,16 +171,28 @@ const stagger = {
 };
 
 function ProjectCard({ p, onClick }) {
+  const [previewing, setPreviewing] = useState(false);
+
   return (
     <motion.div
       variants={fadeUp}
-      className={`project-card ${p.featured ? "featured" : ""}`}
+      className={`project-card ${p.featured ? "featured" : ""} ${previewing ? "previewing" : ""}`}
       onClick={() => onClick(p)}
+      onMouseEnter={() => setPreviewing(true)}
+      onMouseLeave={() => setPreviewing(false)}
+      onFocusCapture={() => setPreviewing(true)}
+      onBlurCapture={() => setPreviewing(false)}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
       style={{ "--accent": p.color }}
     >
       {p.featured && <div className="featured-badge">Featured</div>}
       <div className="project-accent" style={{ background: p.color }} />
+      {p.video && (
+        <div className="project-video-wrap" aria-hidden="true">
+          <video className="project-video" src={p.video} muted loop playsInline autoPlay preload="metadata" />
+          <div className="project-video-label">Preview</div>
+        </div>
+      )}
       <div className="project-body">
         <h3 className="project-title">{p.title}</h3>
         <p className="project-tagline">{p.tagline}</p>
@@ -361,6 +379,7 @@ export default function Portfolio() {
               <span /> Available for Internships
             </motion.div>
             <motion.h1 variants={fadeUp} className="hero-name">
+              <span className="hero-kicker">Hey, I am</span>
               Mohd<br />
               <span className="grad">Viquaruddin<br />Anas</span>
             </motion.h1>
