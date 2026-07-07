@@ -475,6 +475,14 @@ textarea {
   color: #334155;
 }
 
+.app.light .identity-role {
+  color: #0f172a;
+}
+
+.app.light .identity-cursor {
+  color: #22e276;
+}
+
 .hero-tagline {
   max-width: 900px;
   margin-inline: 0;
