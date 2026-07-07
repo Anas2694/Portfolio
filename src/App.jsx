@@ -935,10 +935,8 @@ export default function Portfolio() {
       </section>
 
       <footer className="footer">
-        <div className="footer-links">
-          {NAV_LINKS.map((l) => <button key={l.id} onClick={() => go(l.id)}>{l.label}</button>)}
-        </div>
-        <span>© 2026 Mohd Viquaruddin Anas - Built with React & MERN</span>
+        <p>Built with React, coffee, and curiosity.</p>
+        <span>&copy; 2026 Mohd Viquaruddin Anas</span>
       </footer>
 
       <a href={RESUME_URL} download className="resume-float">Resume</a>
