@@ -892,7 +892,7 @@ export default function Portfolio() {
               <div className="edu-college">BMS College of Engineering, Bangalore</div>
               <div className="edu-pills">
                 <span className="edu-pill">2023 - 2027</span>
-                <span className="edu-pill hi">CGPA: 8.5 / 10.0</span>
+                <span className="edu-pill hi">CGPA: 8.51 / 10.0</span>
                 <span className="edu-pill">VTU Autonomous</span>
               </div>
               <p className="edu-note">Data Structures & Algorithms - OOP - DBMS - Operating Systems - Computer Networks - Machine Learning</p>
