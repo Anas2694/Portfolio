@@ -11,6 +11,7 @@ const EXITLENS_VIDEO = "/assets/exitlens-demo.mp4";
 const POSTVISIT_VIDEO = "/assets/postvisit-demo.mp4";
 const URBANSTAY_VIDEO = "/assets/urbanstay-demo.mp4";
 const NEKO_SCRIPT_URL = "https://louisabraham.github.io/nekojs/neko.js";
+const HERO_VIDEO_URL = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4";
 
 const NAV_LINKS = [
   { label: "About", id: "about" },
@@ -622,12 +623,27 @@ export default function Portfolio() {
         ))}
       </div>
 
+      <section className="portfolio-cover-shell" aria-label="Portfolio visual introduction">
+        <div className="portfolio-cover">
+          <video
+            className="portfolio-cover-video"
+            src={HERO_VIDEO_URL}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          />
+          <motion.div className="hero-badge portfolio-cover-badge" initial="hidden" animate="show" variants={fadeUp}>
+            <span /> Available for work
+          </motion.div>
+        </div>
+      </section>
+
       <section style={{ position: "relative" }}>
         <div className="hero hero-split">
           <motion.div className="hero-left" initial="hidden" animate="show" variants={stagger}>
-            <motion.div variants={fadeUp} className="hero-badge">
-              <span /> Available for work
-            </motion.div>
             <motion.h1 variants={fadeUp} className="hero-name">
               <span className="hero-kicker">Hey, I am</span>
               <span className="grad">Anas</span>
@@ -730,7 +746,7 @@ export default function Portfolio() {
             <motion.div variants={fadeUp}>
               <div className="about-text">
                 <p>I am a third-year Information Science and Engineering student at BMS College of Engineering (Class of 2027), passionate about building full-stack systems that are fast, scalable, and actually useful.</p>
-                <p>My work spans AI-powered healthcare platforms, multi-tenant SaaS analytics, and vacation rental apps. I care about clean architecture, thoughtful UX, and code that holds up in production, not just demos.</p>
+                <p>My work spans AI-powered healthcare platforms, multi-tenant SaaS analytics, and full-stack products. I care about clean architecture, thoughtful UX, and code that holds up in production, not just demos.</p>
                 <p>Outside building, I am active in research - co-authoring an IEEE paper on trust-aware distributed Q-learning for IoT security, with another paper accepted at IEEE WCCST-2026 on knowledge distillation for medical AI.</p>
               </div>
             </motion.div>

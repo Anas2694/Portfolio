@@ -524,6 +524,41 @@ textarea {
   text-align: center;
 }
 
+.portfolio-cover-shell {
+  position: relative;
+  z-index: 1;
+  padding: 76px 5% 0;
+}
+
+.portfolio-cover {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: clamp(300px, 46svh, 480px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: #090909;
+  box-shadow: var(--shadow);
+}
+
+.portfolio-cover-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-cover-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
+  margin: 0;
+  background: rgba(3, 18, 10, 0.76);
+  backdrop-filter: blur(10px);
+}
+
 .hero-code-wrap {
   position: relative;
   width: min(100%, 480px);
@@ -1984,6 +2019,15 @@ textarea.f-input {
 }
 
 @media (max-width: 900px) {
+  .portfolio-cover-shell {
+    padding: 70px 5% 0;
+  }
+
+  .portfolio-cover {
+    height: min(42svh, 420px);
+    border-radius: 22px;
+  }
+
   .hero {
     padding-top: 6rem;
   }
@@ -2032,6 +2076,22 @@ textarea.f-input {
 }
 
 @media (max-width: 600px) {
+  .portfolio-cover-shell {
+    padding: 66px 4% 0;
+  }
+
+  .portfolio-cover {
+    height: 31svh;
+    min-height: 230px;
+    max-height: 280px;
+    border-radius: 18px;
+  }
+
+  .portfolio-cover-badge {
+    top: 16px;
+    left: 16px;
+  }
+
   .hero {
     gap: 28px;
     padding-right: 4%;
