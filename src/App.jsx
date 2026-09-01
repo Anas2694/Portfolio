@@ -745,7 +745,7 @@ export default function Portfolio() {
             </motion.div>
             <motion.div variants={fadeUp}>
               <div className="about-text">
-                <p>I am a third-year Information Science and Engineering student at BMS College of Engineering (Class of 2027), passionate about building full-stack systems that are fast, scalable, and actually useful.</p>
+                <p>I am a fourth-year Information Science and Engineering student at BMS College of Engineering (Class of 2027), passionate about building full-stack systems that are fast, scalable, and actually useful.</p>
                 <p>My work spans AI-powered healthcare platforms, multi-tenant SaaS analytics, and full-stack products. I care about clean architecture, thoughtful UX, and code that holds up in production, not just demos.</p>
                 <p>Outside building, I am active in research - co-authoring an IEEE paper on trust-aware distributed Q-learning for IoT security, with another paper accepted at IEEE WCCST-2026 on knowledge distillation for medical AI.</p>
               </div>
